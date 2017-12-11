@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="City Rooms" content="">
+    <meta name="City Rooms" content="Full Stack Project">
+
+	<title>City Rooms</title>
+
+	<!--Bootstrap CSS-->
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Style Sheets -->
+	<link rel = "stylesheet" type = "text/css" href = "app/public/assets/css/style.css"/>
+	<!-- Date Picker CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+
+	<!--Google Fonts-->
+
+</head>
+
+<body>
+<div class="container-fluid">
+
+	<!-- Navbar Default -->
+	<div class="navbar navbar-default role="navigation">
+		<!-- Navbar grey box -->
+		<div class="navbar-header">
+			<!-- Hamburger Menu -->
+			<button type="button" class="navbar-toggle data-toggle="collapse" data-targe=".navbar-collapse">
+				<span class="sr-only">Toggle Navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		</div>
+		<!-- Menu options / Navbar -->
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="" id="menuOptions">About</a></li>
+				<li><a href="" id="menuOptions">Join</a></li>
+				<li><a href="" id="menuOptions">Login</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Title Jumbotron -->
+	<div class="jumbotron jumbotron-fluid cityDiv">
+		<div class="container">
+			<ul class="list-inline">
+				<li id="cityRooms">City Rooms</li>
+			</ul>
+		</div>
+
+
+		<!-- City Selection -->
+		<div class="row">
+			<div class="col-sm-12 col-med-12 col-lg-12 searchBar" id="searchBar">
+				<div class="row board">
+					<div class="form-group">
+						<label for="exampleFormControlSelect1">Select City</label>
+						<select class="form-control" id="exampleFormControlSelect1">
+							<option>Chicago</option>
+							<option>San Francisco</option>
+							<option>New York</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Date From -->
+		<div class="row">
+			<div class="col-sm-12 col-med-6 col-lg-6 dateFrom">
+				<form method="post">
+					<div class="form-group"> <!-- Date input -->
+						<label class="control-label" for="date">From</label>
+						<input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+					</div>
+				</form>
+			</div>
+
+			<!-- Date To -->
+			<div class="col-sm-12 col-med-6 col-lg-6 dateTo">
+				<form method="post">
+					<div class="form-group"> <!-- Date input -->
+						<label class="control-label" for="date">To</label>
+						<input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+						<div class="form-group"> <!-- Submit button -->
+							<button class="btn btn-primary " name="submit" type="submit">Submit</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<!-- JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+      var date_input=$('input[name="date"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+</script>
+
+</body>
+
+</html>

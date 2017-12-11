@@ -1,0 +1,56 @@
+body {
+	background-color: gray;
+}
+
+.navbar{
+	background-color: gray;
+	border:none;
+}
+
+.nav{
+    float: right;
+}
+
+#menuOptions{
+    color: white;
+}
+
+li, label {
+	color: white;
+	text-align: center;
+}
+
+.cityDiv{
+	margin-top: 10%;
+	text-align: center;
+	background-color: gray;
+	border:solid;
+	margin-bottom: 10%
+}
+
+#cityRooms{
+	font-size: 40px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+
+.searchBar {
+	text-align: center;
+
+}
+
+.form-group {
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.dateFrom{
+	display: inline-block;
+	text-align: center;
+}
+
+.dateTo{
+	display: inline-block;
+	text-align: center;
+}
