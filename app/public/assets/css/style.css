@@ -1,9 +1,9 @@
 body {
-	background-color: gray;
+	background-color: white;
 }
 
 .navbar{
-	background-color: gray;
+	background-color: white;
 	border:none;
 }
 
@@ -12,26 +12,28 @@ body {
 }
 
 #menuOptions{
-    color: white;
+    color: black;
 }
 
 li, label {
-	color: white;
+	color: black;
 	text-align: center;
 }
 
 .cityDiv{
 	margin-top: 10%;
 	text-align: center;
-	background-color: gray;
+	background-color: white;
 	border:solid;
-	margin-bottom: 10%
+	margin-bottom: 10%;
+	font-family: 'Carrois Gothic SC', sans-serif;
 }
 
 #cityRooms{
 	font-size: 40px;
 	padding-bottom: 10px;
 	padding-top: 10px;
+	font-weight: bold;
 }
 
 
