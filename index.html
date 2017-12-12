@@ -22,7 +22,6 @@
 
 <body>
 
-<div class="container">
 	<!-- Navbar Default -->
 	<div class="navbar navbar-default role="navigation">
 		<!-- Navbar grey box -->
@@ -46,6 +45,7 @@
 	</div>
 </div>
 
+<div class="container">
 <div class="container-fluid">
 	<!-- Title Jumbotron -->
 	<div class="jumbotron jumbotron-fluid cityDiv">
@@ -110,7 +110,6 @@
 				    </select>
 					</div>
 			</div>
-
 			<!-- Type of Room -->
 			<div class="col-xs-6 col-sm-3 col-med-3 col-lg-3 roomType">
 				<div class="form-group">
@@ -122,7 +121,6 @@
 				    </select>
   				</div>
 			</div>
-
 		</div>
 
 		<!-- Button -->
@@ -175,12 +173,12 @@
 					<div class="checkbox">
 						<label><input type="checkbox" value="" checked>Remember me</label>
 					</div>
-					<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+					<button type="submit" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
 				</form>
 			</div>
 			<div class="modal-footer">
 				<button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-				<p>Forgot <a data-toggle="modal" href="#resetPassword" data-dismiss="modal">Password?</a></p>
+				<p id="modalFooter">Forgot <a data-toggle="modal" href="#resetPassword" data-dismiss="modal" id="modalFooter">Password?</a></p>
 			</div>
 		</div>
 	</div>
@@ -209,13 +207,13 @@
 					<div class="checkbox">
 						<label><input type="checkbox" value="" checked>Remember me</label>
 					</div>
-					<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+					<button type="submit" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
 				</form>
 			</div>
 			<div class="modal-footer">
 				<button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-				<p>Not a member? <a data-toggle="modal" href="#myModalJoin" data-dismiss="modal">Sign Up</a></p>
-				<p>Forgot <a data-toggle="modal" href="#resetPassword" data-dismiss="modal">Password?</a></p>
+				<p id="modalFooter">Not a member? <a data-toggle="modal" href="#myModalJoin" data-dismiss="modal" id="modalFooter">Sign Up</a></p>
+				<p id="modalFooter">Forgot <a data-toggle="modal" href="#resetPassword" data-dismiss="modal" id="modalFooter">Password?</a></p>
 			</div>
 		</div>
 	</div>
@@ -237,7 +235,7 @@
 						<label for="forgotPassword"><span class="glyphicon glyphicon-user"></span> Enter E-mail To Reset Password</label>
 						<input type="text" class="form-control" id="forgotPassword" placeholder="Enter email">
 					</div>
-					<button type="submit" class="btn btn-success btn-block"><span class="glyphicon glyphicon-refresh"></span> Reset</button>
+					<button type="submit" class="btn btn-warning btn-block"><span class="glyphicon glyphicon-refresh"></span> Reset</button>
 				</form>
 			</div>
 			<div class="modal-footer">

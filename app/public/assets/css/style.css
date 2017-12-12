@@ -10,6 +10,7 @@ body {
 .navbar{
 	border-style: none;
 	border-bottom: 1px solid #D3D3D3;
+	width: 100%;
 	border-radius: 0px;
 	background-color: transparent;
 
@@ -19,9 +20,7 @@ body {
     float: right;
 }
 
-#myModal{
-  
-}
+
 
 li, label {
 	text-align: center;
@@ -60,11 +59,17 @@ li, label {
 	padding-left: 25px;
 }
 
-.form-group {
+.form-group{
 	padding-left: 5px;
 	padding-right: 5px;
 	font-weight: normal;
 	font-family: 'Helvetica Neue';
+}
+
+#modalFooter{
+	font-family: 'Helvetica Neue';
+	font-size: 17px;
+	font-weight: normal;
 }
 
 .dateFrom{
