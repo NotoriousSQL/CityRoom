@@ -24,10 +24,10 @@ li, label {
 .cityDiv{
 	margin-top: 10%;
 	text-align: center;
-	background-color: white;
 	border:solid;
 	margin-bottom: 10%;
 	font-family: 'Carrois Gothic SC', sans-serif;
+	background: transparent;
 }
 
 #cityRooms{
