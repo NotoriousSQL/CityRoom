@@ -21,30 +21,32 @@
 </head>
 
 <body>
-<div class="container-fluid">
 
-	<!-- Navbar Default -->
-	<div class="navbar navbar-default role="navigation">
-		<!-- Navbar grey box -->
-		<div class="navbar-header">
-			<!-- Hamburger Menu -->
-			<button type="button" class="navbar-toggle data-toggle="collapse" data-targe=".navbar-collapse">
-				<span class="sr-only">Toggle Navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-		</div>
-		<!-- Menu options / Navbar -->
-		<div class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-				<li><a href="" id="menuOptions">About</a></li>
-				<li><a href="" id="menuOptions">Join</a></li>
-				<li><a href="" id="menuOptions">Login</a></li>
-			</ul>
+	<div class="container">
+		<!-- Navbar Default -->
+		<div class="navbar navbar-default role="navigation">
+			<!-- Navbar grey box -->
+			<div class="navbar-header">
+				<!-- Hamburger Menu -->
+				<button type="button" class="navbar-toggle data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle Navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<!-- Menu options / Navbar -->
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="" id="menuOptions">About</a></li>
+					<li><a href="" id="menuOptions">Join</a></li>
+					<li><a href="" id="menuOptions">Login</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 
+	<div class="container-fluid">
 	<!-- Title Jumbotron -->
 	<div class="jumbotron jumbotron-fluid cityDiv">
 		<div class="container">
@@ -72,7 +74,7 @@
 
 		<!-- Date From -->
 		<div class="row">
-			<div class="col-sm-12 col-med-6 col-lg-6 dateFrom">
+			<div class="col-sm-3 col-med-6 col-lg-3 dateFrom">
 				<form method="post">
 					<div class="form-group"> <!-- Date input -->
 						<label class="control-label" for="date">From</label>
@@ -82,19 +84,51 @@
 			</div>
 
 			<!-- Date To -->
-			<div class="col-sm-12 col-med-6 col-lg-6 dateTo">
+			<div class="col-sm-3 col-med-6 col-lg-3 dateTo">
 				<form method="post">
 					<div class="form-group"> <!-- Date input -->
 						<label class="control-label" for="date">To</label>
 						<input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
-						<div class="form-group"> <!-- Submit button -->
-							<button class="btn btn-primary " name="submit" type="submit">Submit</button>
-						</div>
 					</div>
 				</form>
 			</div>
+
+			<!-- Number of guests -->
+			<div class="col-sm-3 col-med-6 col-lg-3 noGuests">
+				<div class="form-group">
+    				<label for="exampleSelect1">Number of Guests</label>
+    				<select class="form-control" id="exampleSelect1">
+				      <option>1</option>
+				      <option>2</option>
+				      <option>3</option>
+				      <option>4</option>
+				      <option>5</option>
+				    </select>
+  				</div>
+			</div>
+
+			<!-- Type of Room -->
+			<div class="col-sm-3 col-med-6 col-lg-3 noGuests">
+				<div class="form-group">
+    				<label for="exampleSelect1">Type of Room</label>
+    				<select class="form-control" id="exampleSelect1">
+				      <option>Private Room</option>
+				      <option>Two Beds</option>
+				      <option>Whole House</option>
+				    </select>
+  				</div>
+			</div>
+
 		</div>
 
+		<!-- Button -->
+		<div class="row">
+			<div class="col-sm-12 col-med-12 col-lg-12">
+				<div class="form-group submitButton"> <!-- Submit button -->
+					<button class="btn btn-primary" name="submit" type="submit">Submit</button>
+				</div>
+			</div>
+		</div>
 	</div>
 
 </div>

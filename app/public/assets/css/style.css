@@ -54,3 +54,7 @@ li, label {
 	display: inline-block;
 	text-align: center;
 }
+
+.submitButton{
+	float: right;
+}
