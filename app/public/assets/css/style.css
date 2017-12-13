@@ -96,6 +96,25 @@ li, label {
 	margin-left: 46%;
 }
 
+#aboutUs{
+	font-family: 'Helvetica Neue';
+}
+
+#toTop{
+	background-color: transparent;
+	border: none;
+	color: grey;
+	}
+
+#toTop:hover{
+	color: #444444;
+	text-decoration: none;
+	}
+
+#toTop:active{
+	border:none;
+}
+
 @media only screen and (max-width: 768px) {
     #cityRooms {
         margin-left: 35%;

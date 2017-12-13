@@ -8,11 +8,11 @@
 
 	<title>City Rooms</title>
 	<!--Tab Icon-->
-	<link rel="shortcut icon" type="image/png" href="app/public/assets/images/tablogo.png">
+	<link rel="shortcut icon" type="image/png" href="assets/images/tablogo.png">
 	<!--Bootstrap CSS-->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- Style Sheets -->
-	<link rel = "stylesheet" type = "text/css" href = "app/public/assets/css/style.css"/>
+	<link rel = "stylesheet" type = "text/css" href = "assets/css/style.css"/>
 	<!-- Date Picker CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 	<!--Google Fonts-->
@@ -51,7 +51,7 @@
 	<div class="jumbotron jumbotron-fluid cityDiv">
 		<div class="container">
 			<ul class="list-inline">
-				<li id="cityRooms">City<img src="app/public/assets/images/logo3.png" id="logo"><br>Rooms</li>
+				<li id="cityRooms">City<img src="assets/images/logo3.png" id="logo"><br>Rooms</li>
 			</ul>
 		</div>
 
@@ -131,6 +131,27 @@
 				</div>
 			</div>
 		</div>
+
+<br><br><br><br><br><br><br>
+
+<div class="row">
+	<div class="col-xs-0 col-sm-2 col-med-2 col-lg-2"></div>
+	<div class="col-xs-12 col-sm-8 col-med-8 col-lg-8" id="aboutUs">
+		<h2 style="text-align: center;"><b>About Us</b></h2>
+
+		<br>
+
+		<p> City Rooms is a web-based application that allows users to view historical data from Airbnb in a variety of ways, including showing trending data of housing costs. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        <br><br>
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+		</p>
+	
+		<br> <br> <br>
+
+		<a href="#" id="toTop">Back to Top</a>
+
+	</div>
+</div>
 
 <!-- Modal join-->
 <div class="modal fade" id="myModalJoin" role="dialog">
@@ -269,6 +290,24 @@
         date_input.datepicker(options);
 
         // modal call
+
+        $(function() {
+			$('#about').click (function() {
+		      $('html, body').animate({scrollTop: $('#aboutUs').offset().top }, 'slow');
+		      return false;
+		    });
+		});
+
+    	$(function() {
+			$('#toTop').click (function() {
+		      $('html, body').animate({scrollTop: $('#about').offset().top }, 'slow');
+		      return false;
+		    });
+		});	
+        //$("#about").click(function() {
+        //	window.scrollBy(0, 400);
+        //});
+
         $("#joinBtn").click(function() {
             $("#myModalJoin").modal();
         });
