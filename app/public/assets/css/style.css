@@ -1,63 +1,141 @@
 body {
-	background-color: white;
-	font-family: 'Carrois Gothic SC', sans-serif;
+	font-family: 'Poppins', sans-serif;
+	background-image: url("../images/bg.png");
+	background-repeat: no-repeat;
+ 	background-color:#F0F5FF;
+ 	color:#444444;
 }
 
+
 .navbar{
-	background-color: white;
-	border:none;
+	border-style: none;
+	border-bottom: 1px solid #D3D3D3;
+	width: 100%;
+	border-radius: 0px;
+	background-color: transparent;
+
 }
 
 .nav{
     float: right;
 }
 
-#myModal{
-    color: black;
-}
+
 
 li, label {
-	color: black;
 	text-align: center;
+	font-weight: normal;
 }
 
+
+
+
 .cityDiv{
-	margin-top: 10%;
-	text-align: center;
-	background-color: white;
-	border:solid;
+	margin-top: 5%;
 	margin-bottom: 10%;
-	font-family: 'Carrois Gothic SC', sans-serif;
+	background-color: transparent;
+}
+
+#logo{
+	width:50px;
+	margin-left: 2.5px;
 }
 
 #cityRooms{
-	font-size: 40px;
-	padding-bottom: 10px;
-	padding-top: 10px;
-	font-weight: bold;
+	font-family: 'Poppins';
+	font-weight: bolder;
+	letter-spacing:-4px;
+	font-size: 3.5em;
+	line-height: 30px;
+	text-align: left;
+	margin-left: 43%;
 }
+
 
 
 .searchBar {
 	text-align: center;
-
+	padding-right: 25px;
+	padding-left: 25px;
 }
 
-.form-group {
-	padding-left: 50px;
-	padding-right: 50px;
+.form-group{
+	padding-left: 5px;
+	padding-right: 5px;
+	font-weight: normal;
+	font-family: 'Helvetica Neue';
+}
+
+#modalFooter{
+	font-family: 'Helvetica Neue';
+	font-size: 17px;
+	font-weight: normal;
 }
 
 .dateFrom{
 	display: inline-block;
 	text-align: center;
+
 }
 
 .dateTo{
 	display: inline-block;
 	text-align: center;
 }
+.noGuests{
+	display: inline-block;
+	text-align: center;
 
-.submitButton{
-	float: right;
 }
+
+.roomType{
+	display: inline-block;
+	text-align: center;
+}
+.submitButton{
+	margin-left: 46%;
+}
+
+#aboutUs{
+	font-family: 'Helvetica Neue';
+}
+
+#toTop{
+	background-color: transparent;
+	border: none;
+	color: grey;
+	}
+
+#toTop:hover{
+	color: #444444;
+	text-decoration: none;
+	}
+
+#toTop:active{
+	border:none;
+}
+
+@media only screen and (max-width: 768px) {
+    #cityRooms {
+        margin-left: 35%;
+    }
+}
+@media only screen and (max-width: 500px) {
+    #cityRooms {
+        margin-left: 30%;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+	.submitButton{
+		margin-left: 43%;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	.submitButton{
+		margin-left: 38%;
+	}
+}
+
