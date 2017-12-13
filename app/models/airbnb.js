@@ -59,6 +59,10 @@ module.exports = function(sequelize, Datatypes){
 			type: Datatypes.INTEGER,
 			allowNull: true
 		}
+		last_modified:{
+			type: Datatypes.STRING,
+			allowNull: false
+		}
 
 	});
 
