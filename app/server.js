@@ -4,7 +4,7 @@ var bodyParser = require("body-parser");
 
 //express app
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 8000;
 
 
 // Requiring our models for syncing
@@ -21,11 +21,11 @@ app.use(express.static("public"));
 
 //routes
 require("./routes/html-routes.js")(app);
-require("./routes/airbnb-api-routes.js")(app);
-require("./routes/user-api-routes.js")(app);
+// require("./routes/airbnb-api-routes.js")(app);
+// require("./routes/user-api-routes.js")(app);
 
 //syncing sequeilize models and starting express app
-db.sequelize.sync({ force: false }).then(function() {
+db.sequelize.sync().then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });

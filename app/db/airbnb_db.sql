@@ -1,5 +1,5 @@
 ### Schema for Airbnb database data
 
-CREATE DATABASE airbnb;
+CREATE DATABASE airbnb_db;
 
-USE airbnb;
+USE airbnb_db;

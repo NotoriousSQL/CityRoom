@@ -48,17 +48,17 @@ module.exports = function(sequelize, Datatypes){
 		},
 		bedrooms:{
 			type: Datatypes.INTEGER
-		}
+		},
 		bathrooms:{
 			type: Datatypes.INTEGER
-		}
+		},
 		price:{
 			type: Datatypes.FLOAT
 		},
 		minstay:{
 			type: Datatypes.INTEGER,
 			allowNull: true
-		}
+		},
 		last_modified:{
 			type: Datatypes.STRING,
 			allowNull: false

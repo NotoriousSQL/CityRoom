@@ -8,13 +8,13 @@ module.exports = function(sequelize, Datatypes){
 		},
 		last_name:{
 			type: Datatypes.STRING
-		}
+		},
 		email:{
 			type: Datatypes.STRING,
 			allowNull: false,
 			//validation: must be in email format, qwerty@qwerty.com
 			validate:{
-				isEmail:
+				isEmail:true
 			}
 		},
 		username:{
@@ -31,14 +31,14 @@ module.exports = function(sequelize, Datatypes){
 			}
 		},
 		password:{
-			type: Datatypes.STRING
+			type: Datatypes.STRING,
 			allowNull: false,
 			//validation, must be between 8 and 20 characters long
 			validation:{
-				len[8,20]
+				len:[8,20]
 			}
 		}
-	}
+	});
 
 	return User;
 
