@@ -60,7 +60,7 @@ module.exports = function(sequelize, Datatypes){
 			allowNull: true
 		},
 		last_modified:{
-			type: Datatypes.STRING,
+			type: Datatypes.DATE,
 			allowNull: false
 		}
 

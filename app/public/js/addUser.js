@@ -19,7 +19,7 @@ $(document).ready(function(){
 
 		console.log(firstname);
 
-
+		
 		
 		var userObject = {
 			first_name: firstname,
@@ -28,7 +28,7 @@ $(document).ready(function(){
 			username: username,
 			password: password
 		}
-
+		//
 		$.post("/api/user", userObject).then(function(){
 			console.log(userObject);
 		});
