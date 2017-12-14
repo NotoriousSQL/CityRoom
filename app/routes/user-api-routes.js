@@ -1,6 +1,7 @@
 // Requiring our models
 var db = require("../models");
 
+console.log("User:", db.User);
 
 //routes for user
 module.exports = function(app){
@@ -25,8 +26,16 @@ module.exports = function(app){
   	});
 
   	//for creating a user 
-	app.post("/api/authors", function(req, res) {
-		db.User.create(req.body).then(function(dbUser) {
+	app.post("/api/user", function(req, res) {
+    console.log(req.body);
+
+		db.User.create({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      username: req.body.username,
+      password: req.body.password
+    }).then(function(dbUser) {
 	  		res.json(dbUser);
 		});
 	});
