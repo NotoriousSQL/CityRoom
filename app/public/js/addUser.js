@@ -4,18 +4,20 @@ $(document).ready(function(){
 
 	//get the values from the modal join form 
 
-	$(document).on("submit","#submit-sign-up",submitUser);
+	$(document).on("click","#submit-sign-up",submitUser);
 
 	function submitUser(event){
 
 		event.preventDefault();
 
 		//get values
-		var firstname = $("#firstname").val().trim();
-		var lastname = $("#lastname").val().trim();
+		var firstname = $("#firstName").val().trim();
+		var lastname = $("#lastName").val().trim();
 		var email = $("#email").val().trim();
-		var password = $("#password").val().trim();
-		var username = $("#username").val().trim();
+		var password = $("#psw").val().trim();
+		var username = $("#usrname").val().trim();
+
+		console.log(firstname);
 
 
 		
