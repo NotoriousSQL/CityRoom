@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 		event.preventDefault();
 
-		//get values
+		//get values inputed by user
 		var firstname = $("#firstName").val().trim();
 		var lastname = $("#lastName").val().trim();
 		var email = $("#email").val().trim();
@@ -20,7 +20,7 @@ $(document).ready(function(){
 		console.log(firstname);
 
 		
-		
+		//create the user object
 		var userObject = {
 			first_name: firstname,
 			last_name: lastname,
@@ -28,7 +28,7 @@ $(document).ready(function(){
 			username: username,
 			password: password
 		}
-		//
+		//post using the route
 		$.post("/api/user", userObject).then(function(){
 			console.log(userObject);
 		});

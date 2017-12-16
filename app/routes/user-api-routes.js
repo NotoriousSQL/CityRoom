@@ -1,7 +1,7 @@
 // Requiring our models
 var db = require("../models");
 
-console.log("User:", db.User);
+//console.log("User:", db.User);
 
 //routes for user
 module.exports = function(app){
