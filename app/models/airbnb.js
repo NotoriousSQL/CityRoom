@@ -5,11 +5,7 @@ module.exports = function(sequelize, Datatypes){
 		room_id:{
 			type: Datatypes.INTEGER,
 			allowNull: false,
-		},
-		survey_id:
-		{
-			type: Datatypes.INTEGER,
-			allowNull: false
+			primaryKey: true
 		},
 		host_id:
 		{
@@ -27,7 +23,6 @@ module.exports = function(sequelize, Datatypes){
 		},
 		city:{
 			type: Datatypes.STRING,
-			allowNull: false
 		},
 		borough:{
 			type: Datatypes.STRING,
@@ -49,9 +44,6 @@ module.exports = function(sequelize, Datatypes){
 		bedrooms:{
 			type: Datatypes.INTEGER
 		},
-		bathrooms:{
-			type: Datatypes.INTEGER
-		},
 		price:{
 			type: Datatypes.FLOAT
 		},
@@ -62,7 +54,8 @@ module.exports = function(sequelize, Datatypes){
 		last_modified:{
 			type: Datatypes.DATE,
 			allowNull: false
-		}
+		},
+		//timestamps: false,
 
 	});
 
