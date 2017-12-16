@@ -4,4 +4,4 @@ CREATE DATABASE airbnb_db;
 
 USE airbnb_db;
 
-select * from users;
+select * from airbnbs;

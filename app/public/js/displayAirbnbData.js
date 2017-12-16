@@ -3,13 +3,24 @@
 
 $(document).ready(function() {
 
+	var cityData = [];
 	//Obtain data from user input fields
-	// var cityInput = $("#city").val().trim();
+	// 
 
 	// var startDate = $("date")
+	//test to get data
+
 	$("#room-submit").on("click", function(){
-		console.log("Start Date: " + $("#start-date").val().trim())
+		//get data from city input
+		var cityInput = $("#city").val().trim();
+
+		var queryUrl = "/api/airbnb/"  + cityInput;
+
+		$.get(queryUrl, function(data){
+			console.log(json(data));
+		});
 	});
+
 
 
 	//
