@@ -3,11 +3,17 @@
 
 $(document).ready(function() {
 
-	//This will get data
+	//Obtain data from user input fields
+	// var cityInput = $("#city").val().trim();
+
+	// var startDate = $("date")
+	$("#room-submit").on("click", function(){
+		console.log("Start Date: " + $("#start-date").val().trim())
+	});
 
 
-
-}	
+	//
+});	
 
 
 // //function that displays raw data

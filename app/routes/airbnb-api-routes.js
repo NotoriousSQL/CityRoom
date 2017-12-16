@@ -34,4 +34,6 @@ module.exports = function(app){
 			res.json(dbAirbnb);
 		});
 	});
+
+	//get route for 
 };
