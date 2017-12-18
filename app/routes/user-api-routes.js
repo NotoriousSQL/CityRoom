@@ -1,13 +1,13 @@
 // Requiring our models
 var db = require("../models");
 
-//console.log("User:", db.User);
+console.log("User:", db.User);
 
 //routes for user
 module.exports = function(app){
 
 	//get route
-	app.get("api/user", function(request, response){
+	app.get("/api/user", function(req, res){
 		//this will return all users and all the information associated with the user
 		db.User.findAll({}).then(function(dbUser){
 			res.json(dbUser);
@@ -15,7 +15,7 @@ module.exports = function(app){
 	});
 
 	//this will return just 1 user
-	app.get("api/user/:username", function(request, response){
+	app.get("/api/user/:username", function(req, res){
 		db.User.findOne({
       		where: {
         		username: req.params.username
@@ -41,7 +41,7 @@ module.exports = function(app){
 	});
 
 	//for deleting an item
-  	app.delete("api/user/:id", function(request, response){
+  	app.delete("api/user/:id", function(req, res){
   		db.User.destroy({
   			where:{
   				id: req.params.id
