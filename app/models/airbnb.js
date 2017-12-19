@@ -1,6 +1,7 @@
 //sequelize model for our airbnb data
 
 module.exports = function(sequelize, Datatypes){
+<<<<<<< HEAD
 	var Airbnb = sequelize.define("Airbnb",{
 =======
 	var Airbnb = sequelize.define("airbnb",{
@@ -9,6 +10,7 @@ module.exports = function(sequelize, Datatypes){
 			type: Datatypes.INTEGER,
 			allowNull: false,
 		},
+<<<<<<< HEAD
 		host_id:
 		{
 			type: Datatypes.INTEGER,
@@ -28,6 +30,7 @@ module.exports = function(sequelize, Datatypes){
 		room_type:
 		{
 			type: Datatypes.STRING,
+<<<<<<< HEAD
 			allowNull: true,
 			notEmpty: false
 		},
@@ -114,6 +117,7 @@ module.exports = function(sequelize, Datatypes){
 			type: Datatypes.INTEGER,
 			allowNull: true
 		},
+<<<<<<< HEAD
 		latitude:{
 			type: Datatypes.FLOAT,
 			allowNull: true,
@@ -133,6 +137,11 @@ module.exports = function(sequelize, Datatypes){
 	},
 	{
 		timestamps: false
+=======
+		last_modified:{
+			type: Datatypes.STRING,
+			allowNull: false
+		}
 
 >>>>>>> origin/Development
 	});

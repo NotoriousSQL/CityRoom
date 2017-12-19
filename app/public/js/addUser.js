@@ -10,6 +10,7 @@ $(document).ready(function(){
 
 		event.preventDefault();
 
+<<<<<<< HEAD
 		//get values inputed by user
 =======
 		//get values
@@ -22,6 +23,7 @@ $(document).ready(function(){
 
 		console.log(firstname);
 
+<<<<<<< HEAD
 		
 		//create the user object
 =======
@@ -35,6 +37,7 @@ $(document).ready(function(){
 			username: username,
 			password: password
 		}
+<<<<<<< HEAD
 		//post using the route
 =======
 

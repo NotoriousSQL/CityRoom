@@ -1,6 +1,7 @@
 // Requiring our models
 var db = require("../models");
 
+<<<<<<< HEAD
 console.log("Airbnb: ", db.Airbnb);
 
 //route for our airbnb routes

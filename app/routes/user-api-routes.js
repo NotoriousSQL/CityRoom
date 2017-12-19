@@ -7,6 +7,7 @@ console.log("User:", db.User);
 module.exports = function(app){
 
 	//get route
+<<<<<<< HEAD
 	app.get("/api/user", function(req, res){
 =======
 	app.get("api/user", function(request, response){
@@ -18,6 +19,7 @@ module.exports = function(app){
 	});
 
 	//this will return just 1 user
+<<<<<<< HEAD
 	app.get("/api/user/:username/:password", function(req, res){
 		db.User.findOne({
       		where: {
@@ -51,6 +53,7 @@ module.exports = function(app){
 	});
 
 	//for deleting an item
+<<<<<<< HEAD
   	app.delete("api/user/:id", function(req, res){
 =======
   	app.delete("api/user/:id", function(request, response){

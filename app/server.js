@@ -21,6 +21,7 @@ app.use(express.static("public"));
 
 //routes
 require("./routes/html-routes.js")(app);
+<<<<<<< HEAD
 require("./routes/airbnb-api-routes.js")(app);
 =======
 // require("./routes/airbnb-api-routes.js")(app);

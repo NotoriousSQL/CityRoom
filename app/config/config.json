@@ -1,6 +1,7 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "!207needles",
 =======
     "password": "n1234567",
@@ -17,6 +18,7 @@
     "dialect": "mysql"
   },
   "production": {
+<<<<<<< HEAD
     "use_env_variable":"JAWDB_URL", 
 =======
 >>>>>>> origin/Development
