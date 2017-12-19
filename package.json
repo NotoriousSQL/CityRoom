@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "engines": {
     "node": "8.7.0"
-  }
+  },
   "description": "Project 2 - Application that displays Airbnb data for specific cities",
   "main": "server.js",
   "dependencies": {
