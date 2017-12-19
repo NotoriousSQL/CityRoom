@@ -1,19 +1,28 @@
+
+html,body
+{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	overflow-x: hidden;
+}
 body {
 	font-family: 'Poppins', sans-serif;
-	background-image: url("../images/bg.png");
-	background-repeat: no-repeat;
- 	background-color:#F0F5FF;
  	color:#444444;
+ 	background-image: url("../images/bg.png");
+	background-repeat: repeat-x;
+	background-attachment: fixed;
+
 }
+
 
 
 .navbar{
 	border-style: none;
 	border-bottom: 1px solid #D3D3D3;
 	width: 100%;
-	border-radius: 0px;
 	background-color: transparent;
-
 }
 
 .nav{

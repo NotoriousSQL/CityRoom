@@ -22,6 +22,9 @@ app.use(express.static("public"));
 //routes
 require("./routes/html-routes.js")(app);
 require("./routes/airbnb-api-routes.js")(app);
+=======
+// require("./routes/airbnb-api-routes.js")(app);
+>>>>>>> origin/Development
 require("./routes/user-api-routes.js")(app);
 
 //syncing sequeilize models and starting express app

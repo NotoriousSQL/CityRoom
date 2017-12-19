@@ -8,6 +8,9 @@ module.exports = function(app){
 
 	//get route
 	app.get("/api/user", function(req, res){
+=======
+	app.get("api/user", function(request, response){
+>>>>>>> origin/Development
 		//this will return all users and all the information associated with the user
 		db.User.findAll({}).then(function(dbUser){
 			res.json(dbUser);
@@ -20,6 +23,12 @@ module.exports = function(app){
       		where: {
         		username: req.params.username,
             password: req.params.username
+=======
+	app.get("api/user/:id", function(request, response){
+		db.User.findOne({
+      		where: {
+        		id: req.params.id
+>>>>>>> origin/Development
       		}
     	}).then(function(dbUser) {
       		res.json(dbUser);
@@ -43,6 +52,9 @@ module.exports = function(app){
 
 	//for deleting an item
   	app.delete("api/user/:id", function(req, res){
+=======
+  	app.delete("api/user/:id", function(request, response){
+>>>>>>> origin/Development
   		db.User.destroy({
   			where:{
   				id: req.params.id

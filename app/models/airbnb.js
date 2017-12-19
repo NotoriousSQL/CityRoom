@@ -2,6 +2,9 @@
 
 module.exports = function(sequelize, Datatypes){
 	var Airbnb = sequelize.define("Airbnb",{
+=======
+	var Airbnb = sequelize.define("airbnb",{
+>>>>>>> origin/Development
 		room_id:{
 			type: Datatypes.INTEGER,
 			allowNull: false,
@@ -10,6 +13,17 @@ module.exports = function(sequelize, Datatypes){
 		{
 			type: Datatypes.INTEGER,
 			allowNull: true
+=======
+		survey_id:
+		{
+			type: Datatypes.INTEGER,
+			allowNull: false
+		},
+		host_id:
+		{
+			type: Datatypes.INTEGER,
+			allowNull: false
+>>>>>>> origin/Development
 		},
 		room_type:
 		{
@@ -58,6 +72,43 @@ module.exports = function(sequelize, Datatypes){
 		price:{
 			type: Datatypes.FLOAT,
 			allowNull: true
+=======
+			allowNull: false
+		},
+		country:{
+			type: Datatypes.STRING,
+			allowNull: true
+		},
+		city:{
+			type: Datatypes.STRING,
+			allowNull: false
+		},
+		borough:{
+			type: Datatypes.STRING,
+			allowNull: true
+		},
+		neighborhood:{
+			type: Datatypes.STRING,
+			allowNull: true
+		},
+		review:{
+			type: Datatypes.INTEGER
+		},
+		overall_satisfaction:{
+			type: Datatypes.FLOAT
+		},
+		accomidates:{
+			type: Datatypes.INTEGER
+		},
+		bedrooms:{
+			type: Datatypes.INTEGER
+		},
+		bathrooms:{
+			type: Datatypes.INTEGER
+		},
+		price:{
+			type: Datatypes.FLOAT
+>>>>>>> origin/Development
 		},
 		minstay:{
 			type: Datatypes.INTEGER,
@@ -82,6 +133,8 @@ module.exports = function(sequelize, Datatypes){
 	},
 	{
 		timestamps: false
+
+>>>>>>> origin/Development
 	});
 
 

@@ -11,3 +11,4 @@ USE airbnb_db;
 select * from airbnbs;
 
 
+>>>>>>> origin/Development
