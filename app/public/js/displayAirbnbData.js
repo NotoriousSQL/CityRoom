@@ -1,14 +1,7 @@
-//view.js file -> this file will take the input and create charts 
+//displayAirbnbData.js file -> this file will take the input and create charts 
 //displays the charts, maps and database data based on the inputs
 
 $(document).ready(function() {
-
-	//var cityData = [];
-	//Obtain data from user input fields
-	// 
-
-	// var startDate = $("date")
-	//test to get data
 
 	//initialize global variables
 	var cityInput;
@@ -48,8 +41,9 @@ $(document).ready(function() {
 		var averagePricePerYearArray = [];
 		//for loop
 		for(let i = 0; i<=differenceInYears; i++){
+			//setting the year
 			var year = parseInt(startYear)+i;
-
+			//push the year into the array called years. this will be used for the labels for the chart
 			years.push(year);
 
 			console.log(years);
@@ -60,7 +54,7 @@ $(document).ready(function() {
 			resolvedPromise.then(function(value){
 
 				console.log("i",i)
-
+				//set the array of prices to the value, which is equal to array of prices corresponding to the year
 				priceArray = value;
 
 				console.log("Price Array:",priceArray);
@@ -72,13 +66,14 @@ $(document).ready(function() {
 
 				console.log("yearData[i]", yearData[i])
 
-			//get average
-
+				//get the average price for the year
 				var averagePriceForYear = getAveragePrice(yearData[i]);
+				//push it into the array that holds the average data
 				averagePricePerYearArray.push(averagePriceForYear);
 
 				console.log(averagePricePerYearArray);
 
+				//creates the chart
 				createChart(averagePricePerYearArray, years);
 			});
 			
@@ -97,19 +92,25 @@ $(document).ready(function() {
 });	
 
 //gets data from database for the prices depending on the year for the city
-function getYearData(year, city, iterator){
+function getYearData(year, city){
+	//Function that is asynchronous - waits until the database is finished with the query and returns the data
 	return new Promise(
 		function (resolve, reject){
+			//create the queryUrl
 			var queryUrl = "/api/airbnb/" + city + "/" + year;
+			//array for holding the prices for the year
 			var priceArray = [];
 
 			console.log(queryUrl);
 
+			//get route, will return the values that have both city and year
 			$.get(queryUrl, function(data){
+
 				console.log(data);
-				var pricesArray = [];
+				//for loop to go through data and retreive the price
 				for(var i = 0; i < data.length; i++){
 					console.log("Year: ",year,data[i].price)
+					//pushes the price into an array
 					priceArray.push(data[i].price);
 				}
 				resolve(priceArray);
@@ -127,7 +128,7 @@ function getAveragePrice(arrayPrices){
 		total += arrayPrices[i];
 	}
 	
-	var average = total/arrayPrices.length;
+	var average = Math.round(total/arrayPrices.length, -2);
 
 	//return the average price, rounded to 2 decimal places
 	return average

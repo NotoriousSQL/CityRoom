@@ -15,10 +15,11 @@ module.exports = function(app){
 	});
 
 	//this will return just 1 user
-	app.get("/api/user/:username", function(req, res){
+	app.get("/api/user/:username/:password", function(req, res){
 		db.User.findOne({
       		where: {
-        		username: req.params.username
+        		username: req.params.username,
+            password: req.params.username
       		}
     	}).then(function(dbUser) {
       		res.json(dbUser);
