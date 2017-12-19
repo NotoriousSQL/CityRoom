@@ -10,11 +10,7 @@ $(document).ready(function(){
 
 		event.preventDefault();
 
-<<<<<<< HEAD
 		//get values inputed by user
-=======
-		//get values
->>>>>>> origin/Development
 		var firstname = $("#firstName").val().trim();
 		var lastname = $("#lastName").val().trim();
 		var email = $("#email").val().trim();
@@ -22,14 +18,8 @@ $(document).ready(function(){
 		var username = $("#usrname").val().trim();
 
 		console.log(firstname);
-
-<<<<<<< HEAD
 		
 		//create the user object
-=======
-
-		
->>>>>>> origin/Development
 		var userObject = {
 			first_name: firstname,
 			last_name: lastname,
@@ -37,11 +27,7 @@ $(document).ready(function(){
 			username: username,
 			password: password
 		}
-<<<<<<< HEAD
 		//post using the route
-=======
-
->>>>>>> origin/Development
 		$.post("/api/user", userObject).then(function(){
 			console.log(userObject);
 		});

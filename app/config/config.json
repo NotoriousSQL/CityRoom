@@ -1,11 +1,7 @@
 {
   "development": {
     "username": "root",
-<<<<<<< HEAD
-    "password": "!207needles",
-=======
     "password": "n1234567",
->>>>>>> origin/Development
     "database": "airbnb_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -18,10 +14,7 @@
     "dialect": "mysql"
   },
   "production": {
-<<<<<<< HEAD
     "use_env_variable":"JAWDB_URL", 
-=======
->>>>>>> origin/Development
     "dialect": "mysql"
   }
 }

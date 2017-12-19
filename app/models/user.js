@@ -35,7 +35,7 @@ module.exports = function(sequelize, Datatypes){
 			allowNull: false,
 			//validation, must be between 8 and 20 characters long
 			validation:{
-				len:[8,20]
+				len:[6,20]
 			}
 		}
 	});
