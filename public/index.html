@@ -80,7 +80,7 @@
 				<form method="post">
 					<div class="form-group"> <!-- Date input -->
 						<label class="control-label" for="date">From</label>
-						<input class="form-control" id="start-date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+						<input class="form-control" id="start-date" name="date" placeholder="YYYY" type="text"/>
 					</div>
 				</form>
 			</div>
@@ -90,28 +90,14 @@
 				<form method="post">
 					<div class="form-group"> <!-- Date input -->
 						<label class="control-label" for="date">To</label>
-						<input class="form-control" id="end-date" name="date" placeholder="MM/DD/YYY" type="text"/>
+						<input class="form-control" id="end-date" name="date" placeholder="YYYY" type="text"/>
 					</div>
 				</form>
 			</div>
 		</div>
-		<!-- Number of guests -->
-		<div class="row">	
-			<div class="col-xs-0 col-sm-3 col-med-3 col-lg-3"></div>
-			<div class="col-xs-6 col-sm-3 col-med-3 col-lg-3 noGuests">
-				<div class="form-group">
-					<label for="exampleSelect1">Number of Guests</label>
-					<select class="form-control" id="exampleSelect1">
-				      <option>1</option>
-				      <option>2</option>
-				      <option>3</option>
-				      <option>4</option>
-				      <option>5</option>
-				    </select>
-					</div>
-			</div>
 			<!-- Type of Room -->
-			<div class="col-xs-6 col-sm-3 col-med-3 col-lg-3 roomType">
+			<div class="col-xs-0 col-sm-3 col-med-3 col-lg-3"></div>
+			<div class="col-xs-12 col-sm-6 col-med-6 col-lg-6 roomType">
 				<div class="form-group">
     				<label for="exampleSelect1">Type of Room</label>
     				<select class="form-control" id="exampleSelect1">
@@ -295,10 +281,14 @@
         var date_input = $('input[name="date"]');
         var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
         var options = {
-            format: 'mm/dd/yyyy',
+            format: 'yyyy',
             container: container,
             todayHighlight: true,
             autoclose: true,
+            minViewMode: 2,
+	  		maxViewMode: 2,
+	  		clearBtn: true
+
         };
         date_input.datepicker(options);
 
