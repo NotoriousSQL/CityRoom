@@ -14,19 +14,19 @@ module.exports = function(app){
 		});
 	});
 
-	//this will return just 1 user
+	//this will return just 1 user, used for when the user logs into account
 	app.get("/api/user/:username/:password", function(req, res){
 		db.User.findOne({
       		where: {
         		username: req.params.username,
-            password: req.params.username
+            password: req.params.password
       		}
     	}).then(function(dbUser) {
       		res.json(dbUser);
     	});
   	});
 
-  	//for creating a user 
+  //for creating a user 
 	app.post("/api/user", function(req, res) {
     console.log(req.body);
 
@@ -41,7 +41,7 @@ module.exports = function(app){
 		});
 	});
 
-	//for deleting an item
+	//for deleting a user
   	app.delete("api/user/:id", function(req, res){
   		db.User.destroy({
   			where:{
