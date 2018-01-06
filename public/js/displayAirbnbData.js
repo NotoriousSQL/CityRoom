@@ -132,6 +132,7 @@ $(document).ready(function() {
 				//add to array at the proper index for the average room price per year data
 				neighborhoodAveragePricePerYearArray[i] = averageRoomPricePerYear;
 				//create chart
+
 				createRoomNeighborhoodChart(neighborhoodAveragePricePerYearArray, years, neighborhoodChartTitle, neighborhoodChartSelector);
 			});
 
@@ -256,6 +257,7 @@ function getNeighborhoodListingsData(year, city, neighborhood){
 			//for holding the count of the listings in the neighborhood
 			var listingCount = 0;
 			console.log(queryUrl);
+			var listingId = 0
 
 			//get route, will return the values that have both city and year
 			$.get(queryUrl, function(data){
@@ -265,9 +267,11 @@ function getNeighborhoodListingsData(year, city, neighborhood){
 				for(var i = 0; i < data.length; i++){
 					//console.log("Year: ",year,data[i].price)
 					//pushes the price into an array
-					if (data[i].neighborhood === neighborhood){
+
+					if (listingId !== data[i].room_id){
 						listingCount++;
 					}
+					listingId = data[i].room_id;
 				}
 				resolve(listingCount);
 			});
@@ -393,7 +397,7 @@ function createRoomNeighborhoodChart(data, labelsArray, title, chartSelector){
 
 function createListingsChart(data, labelsArray, title){
 	var ctx = $("#neighborhoodCountChart");
-	$("#chart1").empty();
+	ctx.empty();
 	//console.log("DATA for chart:", data)
 
 
