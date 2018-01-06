@@ -6,7 +6,7 @@
 
 ### Synopsis
 
-City Rooms is a web-based application where the user can research past data on Airbnb properties.  The initial input options allow the user to choose the two years from which they want to compare the data (2013 - 2017), select the type of listing (Shared Room, Private Room, Entire Home), and if they would like - choose the neighborhood of Chicago to focus on.  
+City Rooms is a web-based application where the user can research past data on Airbnb properties.  The initial input options allow the user to choose the two years from which they want to compare the data (2013 - 2017), select the type of listing (Shared Room, Private Room, Entire Home), and choose the neighborhood of Chicago to focus on.  
 
 ### Motivation
 
@@ -86,7 +86,6 @@ Eventually, if we were able to find the needed public data sets for historical h
 * Express.js
 * Body-Parser
 * Chart.js
-* Handlebars
 * MySQL
 * Sequelize
 
