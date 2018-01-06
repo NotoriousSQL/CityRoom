@@ -1,90 +1,101 @@
-# SiGo - Stay In or Go Out?
+# City Rooms
 
 
-![Alt Text](assets/images/previewimage.png)
+![Alt Text](public/assets/images/readme-main.png)
 
 
 ### Synopsis
 
-SiGo (Stay In or Go Out) is a web-based application that gives the user two sets of options for staying in or going out.  It provides four random recipes and four random restaurants in Chicago, and then the user can choose to view any of the results in detail.  
-
+City Rooms is a web-based application where the user can research past data on Airbnb properties.  The initial input options allow the user to choose the two years from which they want to compare the data (2013 - 2017), select the type of listing (Shared Room, Private Room, Entire Home), and if they would like - choose the neighborhood of Chicago to focus on.  
 
 ### Motivation
 
-The project came about after combining a few different ideas some of us had for it, such as a party hosting application using a music API and recipe API, and a more extensive calendar application that would utilize an event API to update the calendar in real time.   During our brainstorming session, we all recognized the "Fear of Missing Out" (or "FOMO") phenomenon, and started discussing a product that could help alleviate or destigmatize this fear.  We wanted something that "social butterflies" and "homebodies" could appreciate for different reasons, while also showcasing the positives of staying in or going out to both.        
+Our idea originally started when we found a public data set of all Airbnb listings and thought an app that compared Airbnb and hotel prices in any given location would be extremely useful. However, we soon realized the scope of the project was too big and we decided to condense our idea.  We also were having difficulty finding hotel public data sets.  Since the Airbnb database was updated at least once every year since 2013, we realized we could create an app where the user can view and manipulate Airbnb prices in Chicago.  This information would probably be most useful to prospective real estate investors who are looking to purchase properties with the intention of renting them out as Airbnbs.  If one could see which neighborhoods in Chicago seem to have the quickest increase in pricing then they could have a good idea of where to invest in next.
 
 ### Code Example
 
-Below is a sample of the Javascript we used that calls data from an API called Zomato when the user clicks the main button on the page.  This portion just shows it taking the titles of the four random recipes and displaying them in four divs on the page.  Each time the button is clicked it chooses four different recipes.
+Below is some example code from one of the routes.  This is a snippet of code taken from airbnb-api-routes.js.  As you can see the top half is code for getting the route for the type or room, and the bottom half is getting the route for the neighborhood.
 
-    $('#mainbutton').on('click', function() {
-
-    var recipe = $(this).data('name');
-
-    var queryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/random?limitLicense=false&number=4&tags=";
-    $.ajax({
-        url: queryURL,
-        headers: { 'X-Mashape-Key': 'QjnzWlmOacmshwsPibENUtYYmB3Zp1X16Xmjsn1sIUIJeoo2Gx' },
-        method: 'GET'
-    })
-        .done(function(response) {
-            displayRecipes(response.recipes);
-            displayImages(response.recipes);
-            giveUrl(response.recipes);
-            $("#img1").css("background","#fff8d3");
-            $("#img2").css("background","#fff8d3");
-            $("#img3").css("background","#fff8d3");
-            $("#img4").css("background","#fff8d3");
-            
+    //get route for the room type
+        app.get("/api/airbnb/:city/:year/:room", function(req, res){
+        
+        var year = req.params.year;
+        var city = req.params.city;
+        var room = req.params.room;
+    
+        db.Airbnb.findAll({
+            where:{
+                city: city,
+                last_modified: {
+                    $regexp:year
+                },
+                room_type: room
+            }
+        }).then(function(dbAirbnb){
+            res.json(dbAirbnb);
         });
     });
-    //
-    function displayRecipes(recipes){
-        console.log(recipes);
-        var recipediv1 = $("<div>") 
-        recipediv1.html(recipes[0].title)
-        $("#recipediv1").html(recipediv1)
-        var recipediv2 = $("<div>") 
-        recipediv2.html(recipes[1].title)
-        $("#recipediv2").html(recipediv2)
-        var recipediv3 = $("<div>") 
-        recipediv3.html(recipes[2].title)
-        $("#recipediv3").html(recipediv3)
-        var recipediv4 = $("<div>") 
-        recipediv4.html(recipes[3].title)
-        $("#recipediv4").html(recipediv4)
-      }
+
+    //get route for the neighborhood data
+    app.get("/api/airbnb/neighborhoods/:city/:year/:neighborhood", function(req, res){
+        
+        var year = req.params.year;
+        var city = req.params.city;
+        var neighborhood = req.params.neighborhood;
+
+        db.Airbnb.findAll({
+            where:{
+                city: city,
+                last_modified: {
+                    $regexp:year
+                },
+                neihborhood: neighborhood
+            }
+        }).then(function(dbAirbnb){
+            res.json(dbAirbnb);
+        });
+    });
+
+Below is an example of a few charts.  We used Chart.js to create these charts.  
 
 
+*** Put chart images here ***
 
-### API Reference
 
-The two APIs used are:
+### Data Sets Used
 
-1. #### Zomato
-Zomato APIs give you access to the freshest and most exhaustive information for over 1.5 million restaurants across 10,000 cities globally.
+The Chicago Listings from http://tomslee.net/category/airbnb-data.  The author of this site scraped data from all of the listings from Airbnb between 2013 and 2017.  Originally we intended on using New York and San Francisco but it was more than our available resources could handle.
 
-https://developers.zomato.com/api
 
-2. #### Spoonacular
-Spoonacular is dedicated to building the most comprehensive food ontology in the world. But what good is that data if you can't tap into its glorious potential? Our food API provides individual app developers as well as large businesses with the necessary tools to create stunning applications with our data.
+![Alt Text](public/assets/images/table.png)
+This is an example of the data set we used.  Some of the columns were for room ID number, host ID number, neighborhood, price, and longitude and latitude coordinates.
 
-https://spoonacular.com/food-api
+### What's Next?
 
+What's next for City Rooms?  There's several different ways we are looking to expand our idea.  One of the first additional features we are looking to add is using the Google Maps API to allow the user to see on a map the average change in price each year for every major neighborhood in Chicago.  This would allow the user to have an even better idea of where to invest if they are looking to become an Airbnb host.  
+
+Another feature we would like to add is more cities.  Currently, we are focused on Chicago but eventually we are looking to add every major US city and eventually go international.  
+
+Eventually, if we were able to find the needed public data sets for historical hotel pricings, we could come back to our original idea of being an app that would allow the user to compare hotel and Airbnb prices, not just for current listings, but ideally to compare prices since Airbnb begain in 2008.  We think this information could be very useful to forecast where things are headed in the hotel and room renting markets. 
 
 ### Built With
 
 * Javascript + jQuery
 * Material Design Lite
-* Animate.css
+* Bootstrap
+* Express.js
+* Body-Parser
+* Chart.js
+* Handlebars
+* MySQL
+* Sequelize
 
-![Alt Text](assets/images/mdimage.png)
 
 ### Authors
 
 * Gary Marroquin
-* Jessica Toro
-* Spencer Hawk
+* Kiwon Nam
+* Wilson Acosta
 * Nick Dehmlow 
 
 
