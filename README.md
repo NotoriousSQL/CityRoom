@@ -59,7 +59,7 @@ Below is some example code from one of the routes.  This is a snippet of code ta
 Below is an example of a few charts.  We used Chart.js to create these charts.  
 
 
-*** Put chart images here ***
+![Alt Text](public/assets/images/chart.png)
 
 
 ### Data Sets Used
