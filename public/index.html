@@ -93,9 +93,10 @@
 				</form>
 			</div>
 		</div>
+		<div class="row">
 			<!-- Type of Room -->
 			<div class="col-xs-0 col-sm-3 col-md-3 col-lg-3"></div>
-			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 roomType">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 roomType">
 				<div class="form-group">
     				<label for="exampleSelect1">Type of Room</label>
     				<select class="form-control" id="room-type">
@@ -105,6 +106,17 @@
 				    </select>
   				</div>
 			</div>
+			
+			<!-- Neighborhood -->
+			<!---->
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 roomType">
+				<div class="form-group">
+    				<label for="exampleSelect1">Neighborhood</label>
+    				<select class="form-control" id="neighborhood">
+				    </select>
+  				</div>
+			</div>
+			<div class="col-xs-0 col-sm-3 col-md-3 col-lg-3"></div>
 		</div>
 
 		<!-- Button -->
@@ -136,7 +148,7 @@
 
 
 <!-- chart div -->
-<div class="row">
+<div class="row" id="averagePrice">
 	<div class="col-sm-12 col-md-6">
 		<canvas id="chart1" width="25" height="25"></canvas>
 	</div>
@@ -145,6 +157,16 @@
 	</div>
 </div>
 
+<br><br><br>
+
+<div class="row">
+	<div class="col-sm-12 col-md-6">
+		<canvas id="neighborhoodAvgChart" width="25" height="25"></canvas>
+	</div>
+	<div class="col-sm-12 col-md-6">
+		<canvas id="neighborhoodCountChart" width="25" height="25"></canvas>
+	</div>
+</div>
 
 <!-- Modal join-->
 <div class="modal fade" id="myModalJoin" role="dialog">

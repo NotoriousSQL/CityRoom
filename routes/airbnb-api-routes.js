@@ -65,7 +65,7 @@ module.exports = function(app){
 				last_modified: {
 					$regexp:year
 				},
-				neihborhood: neighborhood
+				neighborhood: neighborhood
 			}
 		}).then(function(dbAirbnb){
 			res.json(dbAirbnb);

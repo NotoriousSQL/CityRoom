@@ -7,13 +7,9 @@ set sql_mode='';
 
 SHOW VARIABLES LIKE 'sql_mode';
 
-USE airbnb_db;
+USE a9n9fjhjttifq5te;
 
 select * from airbnbs;
-
-
-
-USE airbnb_db;
 
 select * from users;
 
