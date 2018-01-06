@@ -1,7 +1,7 @@
 //sequelize model for our airbnb data
 
 module.exports = function(sequelize, Datatypes){
-	var Airbnb = sequelize.define("Airbnb",{
+	var Airbnb = sequelize.define("airbnb",{
 		room_id:{
 			type: Datatypes.INTEGER,
 			allowNull: false,

@@ -1,26 +1,26 @@
 // Requiring our models
 var db = require("../models");
 
-console.log("Airbnb: ", db.Airbnb);
+console.log("Airbnb: ", db.airbnb);
 
 //route for our airbnb routes
 
 module.exports = function(app){
 	
-	//get route for all the data
-	app.get("api/airbnb", function(req, res){
+	// //get route for all the data
+	// app.get("api/airbnb", function(req, res){
 
-		db.Airbnb.findAll({}).then(function(dbAirbnb){
-			res.json(dbAirbnb);
-		});
-	});
+	// 	db.airbnb.findAll({}).then(function(dbAirbnb){
+	// 		res.json(dbAirbnb);
+	// 	});
+	// });
 
 	app.get("/api/airbnb/:city/:year/", function(req, res){
 		
 		var year = req.params.year;
 		var city = req.params.city;
 
-		db.Airbnb.findAll({
+		db.airbnb.findAll({
 			where:{
 				city: city,
 				last_modified: {
@@ -39,7 +39,7 @@ module.exports = function(app){
 		var city = req.params.city;
 		var room = req.params.room;
 
-		db.Airbnb.findAll({
+		db.airbnb.findAll({
 			where:{
 				city: city,
 				last_modified: {
@@ -59,7 +59,7 @@ module.exports = function(app){
 		var city = req.params.city;
 		var neighborhood = req.params.neighborhood;
 
-		db.Airbnb.findAll({
+		db.airbnb.findAll({
 			where:{
 				city: city,
 				last_modified: {

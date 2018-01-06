@@ -46,7 +46,7 @@ $(document).ready(function() {
 			//push the year into the array called years. this will be used for the labels for the chart
 			years.push(year);
 
-			console.log(years);
+			//console.log(years);
 
 
 			var priceArray;	
@@ -115,10 +115,10 @@ function getYearData(year, city){
 			//get route, will return the values that have both city and year
 			$.get(queryUrl, function(data){
 
-				console.log(data);
+				//console.log(data);
 				//for loop to go through data and retreive the price
 				for(var i = 0; i < data.length; i++){
-					console.log("Year: ",year,data[i].price)
+					//console.log("Year: ",year,data[i].price)
 					//pushes the price into an array
 					priceArray.push(data[i].price);
 				}
@@ -143,10 +143,10 @@ function getRoomTypeData(year, city, roomType){
 			//get route, will return the values that have both city and year
 			$.get(queryUrl, function(data){
 
-				console.log(data);
+				//console.log(data);
 				//for loop to go through data and retreive the price
 				for(var i = 0; i < data.length; i++){
-					console.log("Year: ",year,data[i].price)
+					//console.log("Year: ",year,data[i].price)
 					//pushes the price into an array
 					priceArray.push(data[i].price);
 				}
@@ -194,12 +194,12 @@ function createChart(data, labelsArray){
 	}
 	var options = {
 	    scales: {
-	    	// xAxes: [{
-	    	// 	scaleLabel:{
-	    	// 		display: true,
-	    	// 		labelString: "Years"
-	    	// 	}
-	    	// }],
+	    	xAxes: [{
+	    		scaleLabel:{
+	    			display: true,
+	    			labelString: "Year"
+	    		}
+	    	}],
 	        yAxes: [{
 	            ticks: {
 	                beginAtZero: true,
@@ -240,6 +240,12 @@ function createRoomChart(data, labelsArray, title){
 	}
 	var options = {
 	    scales: {
+	    	xAxes: [{
+	    		scaleLabel:{
+	    			display: true,
+	    			labelString: "Year"
+	    		}
+	    	}],
 	        yAxes: [{
 	            ticks: {
 	                beginAtZero: true,

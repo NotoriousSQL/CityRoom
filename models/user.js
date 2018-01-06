@@ -2,7 +2,7 @@
 
 
 module.exports = function(sequelize, Datatypes){
-	var User = sequelize.define("User",{
+	var User = sequelize.define("user",{
 		first_name:{
 			type: Datatypes.STRING
 		},
@@ -33,7 +33,7 @@ module.exports = function(sequelize, Datatypes){
 		password:{
 			type: Datatypes.STRING,
 			allowNull: false,
-			//validation, must be between 8 and 20 characters long
+			//validation, must be between 6 and 20 characters long
 			validation:{
 				len:[6,20]
 			}
